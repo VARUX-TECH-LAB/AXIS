@@ -1,0 +1,118 @@
+{
+  "captured_at": "2026-05-20T07:29:59.842572Z",
+  "name": "transaction_blocked_rollback",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/workflows/transaction-blocked",
+    "body": {
+      "marker": "evidence-blocked-marker-1779262199-bc67e5c0"
+    }
+  },
+  "http_status": 403,
+  "body": {
+    "ok": false,
+    "operation": "transaction_blocked_destructive",
+    "status": "blocked",
+    "message": "This operation was blocked by AXIS policy.",
+    "data": null,
+    "security": {
+      "decision": "BLOCK",
+      "policy_decision": "BLOCK",
+      "business_status": "blocked",
+      "message": "This operation was blocked by AXIS policy.",
+      "reason": "delete_without_where",
+      "reason_code": "delete_without_where",
+      "matched_rule": "pilot.block.delete_without_where",
+      "risk_level": "CRITICAL",
+      "explanation": "DELETE without WHERE is not allowed.",
+      "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": null,
+      "audit_event_id": "8c176036-b6d8-4488-9250-6ed55e51e6e8",
+      "execution_status": "blocked",
+      "retry_mode": null,
+      "request_id": "da117abd-c0c7-4117-996f-71456abf05e4",
+      "error_code": "policy_block"
+    },
+    "axis": {
+      "decision": "BLOCK",
+      "policy_decision": "BLOCK",
+      "reason": "delete_without_where",
+      "reason_code": "delete_without_where",
+      "matched_rule": "pilot.block.delete_without_where",
+      "message": "Write request blocked by policy",
+      "risk_level": "CRITICAL",
+      "explanation": "DELETE without WHERE is not allowed.",
+      "classification": {
+        "operation": "DELETE",
+        "query_type": "WRITE",
+        "scope": "batch",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "customers"
+        },
+        "risk_signals": [
+          "broad_delete",
+          "bulk_operation",
+          "delete_without_where",
+          "missing_id",
+          "missing_scope_for_write",
+          "missing_tenant_id",
+          "prod_write"
+        ]
+      },
+      "rows": [],
+      "row_count": 0,
+      "request_id": "da117abd-c0c7-4117-996f-71456abf05e4",
+      "approval_id": null,
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d",
+      "actor_type": "human",
+      "audit_event_id": "8c176036-b6d8-4488-9250-6ed55e51e6e8",
+      "execution_status": "blocked",
+      "operating_mode": "enforce",
+      "session_id": "5c4a6544-d509-4eae-bfb7-6a8e4f07c0a0",
+      "error_code": "policy_block",
+      "error": {
+        "code": "policy_block",
+        "message": "Request was blocked by policy.",
+        "category": "policy",
+        "severity": "warning",
+        "request_id": "da117abd-c0c7-4117-996f-71456abf05e4",
+        "safe_to_retry": false,
+        "operator_action": "Do not bypass AXIS. Review matched policy rule and audit evidence before changing policy.",
+        "details": {
+          "decision": "BLOCK",
+          "matched_rule": "pilot.block.delete_without_where",
+          "operation": "delete",
+          "policy_decision": "BLOCK",
+          "policy_id": "axis_real_app_pilot",
+          "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+          "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+          "query_type": "write",
+          "reason": "delete_without_where",
+          "request_id": "da117abd-c0c7-4117-996f-71456abf05e4",
+          "risk": "CRITICAL",
+          "scope": "batch",
+          "session_id": "5c4a6544-d509-4eae-bfb7-6a8e4f07c0a0",
+          "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d"
+        }
+      }
+    },
+    "marker": "evidence-blocked-marker-1779262199-bc67e5c0",
+    "marker_persisted": false
+  },
+  "state_check": {
+    "checked_via": "http://localhost:8000/api/admin-actions",
+    "marker": "evidence-blocked-marker-1779262199-bc67e5c0",
+    "marker_found_in_recent_admin_actions": false,
+    "rollback_confirmed": true
+  }
+}

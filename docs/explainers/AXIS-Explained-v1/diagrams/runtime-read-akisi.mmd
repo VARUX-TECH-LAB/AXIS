@@ -1,0 +1,8 @@
+flowchart TD
+  A[Safe SELECT] --> B[Classify READ]
+  B --> C[Policy evaluate]
+  C -->|ALLOW| D[Audit decision]
+  D --> E[PostgreSQL execution]
+  E --> F[Result evidence]
+  F --> G[Response 200]
+

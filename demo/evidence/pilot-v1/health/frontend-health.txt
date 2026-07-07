@@ -1,0 +1,6 @@
+captured_at: 2026-05-20T07:29:59.339069Z
+url: http://localhost:8088
+http_status: 200
+content_type: text/html
+content_length_bytes: 5063
+result: reachable

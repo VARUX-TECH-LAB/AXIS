@@ -1,0 +1,11 @@
+flowchart LR
+  Browser[Browser untrusted input] --> CP[Control Plane server proxy]
+  CP --> Axis[AXIS trusted runtime]
+  CP -. operator token server-side .-> Axis
+  Browser -. token görmemeli .-> CP
+  Caller[Caller request body untrusted] --> Axis
+  Axis --> Policy[Policy files sensitive config]
+  Axis --> WAL[Audit WAL evidence source]
+  Axis --> DB[(Production PostgreSQL protected target)]
+  Direct[Direct DB bypass] -. korunmaz .-> DB
+

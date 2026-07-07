@@ -1,0 +1,108 @@
+{
+  "captured_at": "2026-05-20T07:29:59.693531Z",
+  "name": "blocked_dangerous_delete",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/dangerous/delete-all-customers",
+    "body": {}
+  },
+  "http_status": 403,
+  "body": {
+    "ok": false,
+    "operation": "dangerous_destructive_operation",
+    "status": "blocked",
+    "message": "This operation was blocked by AXIS policy.",
+    "data": null,
+    "security": {
+      "decision": "BLOCK",
+      "policy_decision": "BLOCK",
+      "business_status": "blocked",
+      "message": "This operation was blocked by AXIS policy.",
+      "reason": "delete_without_where",
+      "reason_code": "delete_without_where",
+      "matched_rule": "pilot.block.delete_without_where",
+      "risk_level": "CRITICAL",
+      "explanation": "DELETE without WHERE is not allowed.",
+      "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": null,
+      "audit_event_id": "9c84901a-54f4-4143-93a8-00d13b929e1a",
+      "execution_status": "blocked",
+      "retry_mode": null,
+      "request_id": "9d2f5fc2-1f4e-4001-879b-dbebc76887d3",
+      "error_code": "policy_block"
+    },
+    "axis": {
+      "decision": "BLOCK",
+      "policy_decision": "BLOCK",
+      "reason": "delete_without_where",
+      "reason_code": "delete_without_where",
+      "matched_rule": "pilot.block.delete_without_where",
+      "message": "Write request blocked by policy",
+      "risk_level": "CRITICAL",
+      "explanation": "DELETE without WHERE is not allowed.",
+      "classification": {
+        "operation": "DELETE",
+        "query_type": "WRITE",
+        "scope": "batch",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "customers"
+        },
+        "risk_signals": [
+          "broad_delete",
+          "bulk_operation",
+          "delete_without_where",
+          "missing_id",
+          "missing_scope_for_write",
+          "missing_tenant_id",
+          "prod_write"
+        ]
+      },
+      "rows": [],
+      "row_count": 0,
+      "request_id": "9d2f5fc2-1f4e-4001-879b-dbebc76887d3",
+      "approval_id": null,
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d",
+      "actor_type": "human",
+      "audit_event_id": "9c84901a-54f4-4143-93a8-00d13b929e1a",
+      "execution_status": "blocked",
+      "operating_mode": "enforce",
+      "session_id": "519f5331-153c-49b2-a1cf-06dc553306dd",
+      "error_code": "policy_block",
+      "error": {
+        "code": "policy_block",
+        "message": "Request was blocked by policy.",
+        "category": "policy",
+        "severity": "warning",
+        "request_id": "9d2f5fc2-1f4e-4001-879b-dbebc76887d3",
+        "safe_to_retry": false,
+        "operator_action": "Do not bypass AXIS. Review matched policy rule and audit evidence before changing policy.",
+        "details": {
+          "decision": "BLOCK",
+          "matched_rule": "pilot.block.delete_without_where",
+          "operation": "delete",
+          "policy_decision": "BLOCK",
+          "policy_id": "axis_real_app_pilot",
+          "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+          "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+          "query_type": "write",
+          "reason": "delete_without_where",
+          "request_id": "9d2f5fc2-1f4e-4001-879b-dbebc76887d3",
+          "risk": "CRITICAL",
+          "scope": "batch",
+          "session_id": "519f5331-153c-49b2-a1cf-06dc553306dd",
+          "sql_fingerprint": "f480691828df3f8c68e3d0843b12b266534bc3636f11542c092f3ea8a331694d"
+        }
+      }
+    }
+  }
+}

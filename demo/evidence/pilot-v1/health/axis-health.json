@@ -1,0 +1,32 @@
+{
+  "audit_integrity": {
+    "health": "healthy",
+    "last_failure": null
+  },
+  "audit_jsonl_projection": {
+    "health": "healthy",
+    "source": "projection"
+  },
+  "audit_wal": {
+    "source": "wal",
+    "status": "healthy"
+  },
+  "auth": {
+    "jwt_required": false,
+    "mode": "disabled"
+  },
+  "evidence_signing": {
+    "kid": null,
+    "signature_algorithm": "none",
+    "signature_status": "disabled"
+  },
+  "policy": {
+    "integrity": "valid",
+    "manifest_loaded": true,
+    "policy_id": "axis_real_app_pilot",
+    "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+    "policy_version": "axis_real_app_pilot_v1@2026-05-20.1"
+  },
+  "service": "varux-db-guard",
+  "status": "ok"
+}

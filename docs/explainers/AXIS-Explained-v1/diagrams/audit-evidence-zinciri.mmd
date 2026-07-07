@@ -1,0 +1,8 @@
+flowchart LR
+  E1[Event 1 previous_hash null] -->|event_hash H1| E2[Event 2 previous_hash H1]
+  E2 -->|event_hash H2| E3[Event 3 previous_hash H2]
+  E3 --> V[Verify]
+  V --> R{Sonuç}
+  R -->|Tutarlı| OK[verified]
+  R -->|Kopuk veya değişmiş| BAD[tampered / unverifiable]
+

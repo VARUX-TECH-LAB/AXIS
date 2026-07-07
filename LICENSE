@@ -1,0 +1,81 @@
+VARUX AXIS PUBLIC DEMONSTRATION AND EVALUATION LICENSE v1.0
+
+Copyright (c) 2026 VARUX. All rights reserved.
+
+This repository and all files in it are proprietary VARUX materials.
+This is not an open source license.
+
+1. Purpose
+
+The materials are published only so that reviewers, customers, partners,
+and investors can view the public AXIS demonstration package and evaluate
+the disclosed demo evidence.
+
+2. Limited Permission
+
+VARUX grants you a limited, revocable, non-exclusive, non-transferable
+permission to:
+
+- view this repository;
+- clone or fork it only as technically necessary to review it on GitHub; and
+- inspect the public demo documentation, evidence fixtures, and non-sensitive
+  verification material for evaluation purposes.
+
+No other permission is granted.
+
+3. Restrictions
+
+Without prior written permission from VARUX, you may not:
+
+- copy, redistribute, publish, sublicense, sell, lease, host, or provide this
+  repository or any substantial part of it to another party;
+- use the materials in production or in any commercial product or service;
+- create, train, fine-tune, benchmark, or improve any competing product,
+  database security product, policy engine, audit engine, approval workflow,
+  proxy, ORM adapter, or AI system using these materials;
+- reverse engineer, reconstruct, or derive withheld AXIS implementation
+  details from the public demo materials;
+- remove or alter VARUX copyright notices, provenance notices, source
+  redaction notices, or public demo signatures;
+- represent AXIS, VARUX, or this repository as your own work; or
+- use the VARUX or AXIS names, logos, marks, or identifiers except to refer
+  accurately to this public demo repository.
+
+4. Withheld Implementation
+
+The public repository intentionally omits security-sensitive and
+commercially material implementation details. The omission of source code,
+runtime internals, policy engine internals, approval-store internals,
+audit-chain internals, deployment artifacts, tests, or build files does not
+grant any permission to reconstruct them.
+
+5. No Patent, Trademark, or Commercial License
+
+No patent rights, trademark rights, trade secret rights, production use
+rights, hosted service rights, or commercial rights are granted.
+
+6. Termination
+
+Any breach of this license immediately terminates your permission to use,
+copy, fork, clone, or retain the materials. Upon termination, you must stop
+using the materials and delete any copies under your control, except where
+retention is required by law.
+
+7. Disclaimer
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, SECURITY, OR ACCURACY.
+
+8. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, VARUX WILL NOT BE LIABLE FOR ANY
+CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM OR RELATED TO THE MATERIALS
+OR THEIR USE.
+
+9. Written Permission
+
+For source access, commercial evaluation, production licensing, partnership
+review, or security review beyond this public demo, contact VARUX:
+
+https://varuxcyber.com/

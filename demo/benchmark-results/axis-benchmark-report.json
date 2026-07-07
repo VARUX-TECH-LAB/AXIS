@@ -1,0 +1,157 @@
+{
+  "baseline_performance": {
+    "axis_http_query_allow_path": {
+      "avg_ms": 59.280181428571424,
+      "count": 70,
+      "error_rate_percent": 0.0,
+      "failed_queries": 0,
+      "max_ms": 99.2014,
+      "min_ms": 15.6052,
+      "p50_ms": 59.6295,
+      "p95_ms": 82.4364,
+      "p99_ms": 99.2014,
+      "successful_queries": 70,
+      "throughput_qps": 16.74866534073066,
+      "total_queries": 70,
+      "wall_ms": 4179.4375
+    },
+    "delta": {
+      "avg_ms": 58.03459571428571,
+      "error_rate_percent": 0.0,
+      "p50_ms": 58.9658,
+      "p95_ms": 79.68900000000001,
+      "p99_ms": 81.34490000000001,
+      "throughput_qps": -564.2302509343976
+    },
+    "direct_postgresql_allow_path": {
+      "avg_ms": 1.2455857142857143,
+      "count": 70,
+      "error_rate_percent": 0.0,
+      "failed_queries": 0,
+      "max_ms": 17.8565,
+      "min_ms": 0.3161,
+      "p50_ms": 0.6637,
+      "p95_ms": 2.7474,
+      "p99_ms": 17.8565,
+      "successful_queries": 70,
+      "throughput_qps": 580.9789162751283,
+      "total_queries": 70,
+      "wall_ms": 120.4863
+    }
+  },
+  "config": {
+    "actor": "benchmark_runner",
+    "actor_type": "service",
+    "allow_ratio": 70,
+    "approval_ratio": 20,
+    "axis_url": "http://localhost:6543",
+    "block_ratio": 10,
+    "concurrency": 1,
+    "env": "production",
+    "native_wire_check": false,
+    "output_dir": "demo/benchmark-results",
+    "output_format": [
+      "markdown",
+      "json"
+    ],
+    "pg_database": "prod_main",
+    "pg_host": "localhost",
+    "pg_port": 5432,
+    "pg_user": "varux",
+    "queries": 100,
+    "seed": 42,
+    "tenant": "acme_corp",
+    "warmup": 100
+  },
+  "enforcement_paths": {
+    "approval_required_path": {
+      "approval_record_creation_success_count": 20,
+      "avg_ms": 66.81126,
+      "blocked_count": 0,
+      "count": 20,
+      "error_rate_percent": 0.0,
+      "failed_queries": 0,
+      "max_ms": 82.2555,
+      "min_ms": 24.3183,
+      "p50_ms": 68.3456,
+      "p95_ms": 81.183,
+      "p99_ms": 82.2555,
+      "structured_error_count": 0,
+      "successful_queries": 20,
+      "throughput_qps": 14.928439034643533,
+      "total_queries": 20,
+      "wall_ms": 1339.7248
+    },
+    "block_path": {
+      "approval_record_creation_success_count": 0,
+      "avg_ms": 55.94908,
+      "blocked_count": 5,
+      "count": 10,
+      "error_rate_percent": 0.0,
+      "failed_queries": 0,
+      "max_ms": 72.7892,
+      "min_ms": 11.8993,
+      "p50_ms": 56.754,
+      "p95_ms": 72.7892,
+      "p99_ms": 72.7892,
+      "structured_error_count": 10,
+      "successful_queries": 10,
+      "throughput_qps": 17.189210057819345,
+      "total_queries": 10,
+      "wall_ms": 581.7603
+    }
+  },
+  "environment": {
+    "axis_health": {
+      "audit_integrity": {
+        "health": "healthy",
+        "last_failure": null
+      },
+      "audit_jsonl_projection": {
+        "health": "healthy",
+        "source": "projection"
+      },
+      "audit_wal": {
+        "source": "wal",
+        "status": "healthy"
+      },
+      "policy": {
+        "integrity": "valid",
+        "manifest_loaded": true,
+        "policy_id": "prod_safety_baseline",
+        "policy_sha256": "3b1c86af61be07f346c2a9c3cd057ab3eac3dc522203e61fd39db2d76acf2acd",
+        "policy_version": "1.0.0"
+      },
+      "service": "varux-db-guard",
+      "status": "ok"
+    },
+    "platform": "Windows-10-10.0.19045-SP0",
+    "postgres": {
+      "database": "prod_main",
+      "host": "localhost",
+      "port": 5432,
+      "user": "varux"
+    },
+    "python": "3.14.4"
+  },
+  "failure_samples": [],
+  "generated_at": "2026-05-18T19:02:03.238984Z",
+  "schema": "axis.pilot_benchmark.v1",
+  "security_outcome": {
+    "allow_count": 70,
+    "approval_records_created": 20,
+    "baseline_direct_allow_queries_executed": 70,
+    "block_count": 10,
+    "blocked_before_db": 10,
+    "failed_closed_count": 10,
+    "policy_id": "prod_safety_baseline",
+    "policy_sha256": "3b1c86af61be07f346c2a9c3cd057ab3eac3dc522203e61fd39db2d76acf2acd",
+    "policy_version": "1.0.0",
+    "queries_executed_against_db": 70,
+    "queries_not_executed": 30,
+    "require_approval_count": 20,
+    "total_corpus_size": 100
+  },
+  "skipped": [],
+  "warnings": []
+}

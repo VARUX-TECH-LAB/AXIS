@@ -1,0 +1,17 @@
+{
+  "captured_at": "2026-05-20T07:30:00.009465Z",
+  "source": "http://localhost:6654/audit/verify",
+  "available": true,
+  "http_status": 200,
+  "body": {
+    "status": "verified",
+    "verification_scope": "chain_continuity_and_event_hash",
+    "events_checked": 208,
+    "first_event_id": "a15ab3fe-2217-420d-a842-504874990e6f",
+    "last_event_id": "8c176036-b6d8-4488-9250-6ed55e51e6e8",
+    "last_event_hash": "b8dcfdfe7815abea077c34e8725a9e757c907904cc9f3b49334eda4ead488c7e",
+    "broken_at": null,
+    "reason": null,
+    "verified_at": "2026-05-20T07:30:00.008477467+00:00"
+  }
+}

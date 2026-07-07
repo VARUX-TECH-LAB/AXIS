@@ -1,0 +1,99 @@
+{
+  "captured_at": "2026-05-20T07:29:59.442565Z",
+  "name": "safe_write_create_customer",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/customers",
+    "body": {
+      "name": "Evidence Customer 1779262199-bc67e5c0",
+      "email": "evidence.customer.1779262199-bc67e5c0@example.com",
+      "segment": "enterprise",
+      "user_id": 1
+    }
+  },
+  "http_status": 201,
+  "body": {
+    "ok": true,
+    "operation": "create_customer",
+    "status": "allowed",
+    "message": "Operation completed successfully.",
+    "data": {
+      "id": 8,
+      "tenant_id": "acme",
+      "user_id": 1,
+      "name": "Evidence Customer 1779262199-bc67e5c0",
+      "email": "evidence.customer.1779262199-bc67e5c0@example.com",
+      "segment": "enterprise",
+      "status": "active",
+      "created_at": "2026-05-20T07:29:59.426837+00:00",
+      "updated_at": "2026-05-20T07:29:59.426837+00:00"
+    },
+    "security": {
+      "decision": "ALLOW",
+      "policy_decision": "ALLOW",
+      "business_status": "allowed",
+      "message": "Operation completed successfully.",
+      "reason": "write_allowed",
+      "reason_code": "write_allowed",
+      "matched_rule": "pilot.allow.orm_insert_business_tables",
+      "risk_level": "MEDIUM",
+      "explanation": "Write matched an explicit allow rule.",
+      "sql_fingerprint": "d8359408b511d2689c870ab08a8830ff452d479c83a6b0f85fb255e3b5416b36",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": null,
+      "audit_event_id": "b74411cf-bbb1-45b2-b043-86201aae6012",
+      "execution_status": "executed",
+      "retry_mode": null,
+      "request_id": "a70a7dc4-6880-4d83-82c2-8189ee637047",
+      "error_code": null
+    },
+    "axis": {
+      "decision": "ALLOW",
+      "policy_decision": "ALLOW",
+      "reason": "write_allowed",
+      "reason_code": "write_allowed",
+      "matched_rule": "pilot.allow.orm_insert_business_tables",
+      "message": "Query allowed by DB Guard",
+      "risk_level": "MEDIUM",
+      "explanation": "Write matched an explicit allow rule.",
+      "classification": {
+        "operation": "INSERT",
+        "query_type": "WRITE",
+        "scope": "single",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "customers"
+        },
+        "risk_signals": [
+          "insert_values",
+          "prod_write",
+          "scope_has_actor_or_user_id",
+          "scope_has_tenant_id"
+        ]
+      },
+      "rows": [
+        {
+          "id": "8"
+        }
+      ],
+      "row_count": 1,
+      "request_id": "a70a7dc4-6880-4d83-82c2-8189ee637047",
+      "approval_id": null,
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "d8359408b511d2689c870ab08a8830ff452d479c83a6b0f85fb255e3b5416b36",
+      "actor_type": "human",
+      "audit_event_id": "b74411cf-bbb1-45b2-b043-86201aae6012",
+      "execution_status": "executed",
+      "operating_mode": "enforce",
+      "session_id": "3897a6d0-3a5e-4f2a-93ad-5d57bcbc667c",
+      "error_code": null
+    }
+  }
+}

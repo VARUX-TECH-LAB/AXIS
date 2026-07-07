@@ -1,0 +1,8 @@
+flowchart TD
+  A[Audit WAL] --> B[Event filtreleme]
+  B --> C[Hash-chain verification metadata]
+  C --> D[Policy metadata]
+  D --> E[Evidence bundle]
+  E --> F[Offline verification]
+  F --> G[Reviewer incelemesi]
+

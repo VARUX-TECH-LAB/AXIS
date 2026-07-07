@@ -1,0 +1,13 @@
+flowchart TD
+  A[AXIS başlangıç] --> B[Audit WAL continuity kontrolü]
+  B --> C{WAL geçerli mi?}
+  C -->|Hayır| Z[Fail-fast]
+  C -->|Evet| D[Policy manifest oku]
+  D --> E[SHA-256 doğrula]
+  E --> F{Policy valid mi?}
+  F -->|Hayır| Z
+  F -->|Evet| G[Activation dry-run]
+  G --> H{Dry-run geçti mi?}
+  H -->|Hayır| Z
+  H -->|Evet| I[Listener trafik kabul eder]
+

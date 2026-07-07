@@ -1,0 +1,16 @@
+flowchart LR
+  Caller[Caller / Uygulama / Internal Tool / AI Agent] --> Listener[AXIS HTTP listener]
+  Listener --> Parser[SQL parser ve classifier]
+  Parser --> Policy[Policy engine]
+  Policy --> Decision{Karar}
+  Decision -->|ALLOW| Adapter[Database adapter]
+  Adapter --> Pg[(Production PostgreSQL)]
+  Decision -->|BLOCK| Block[Execution yok]
+  Decision -->|APPROVAL_REQUIRED| Approval[Approval system]
+  Approval --> ApprovalStore[(Approval SQLite store)]
+  Listener --> Audit[(Audit WAL)]
+  Audit --> Projection[JSONL projection]
+  Audit --> Verify[Evidence verification]
+  Control[Control Plane UI] --> Proxy[Server-side proxy]
+  Proxy --> Listener
+

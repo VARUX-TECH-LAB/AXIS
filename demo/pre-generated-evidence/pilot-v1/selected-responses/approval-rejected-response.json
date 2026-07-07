@@ -1,0 +1,304 @@
+{
+  "captured_at": "2026-05-20T07:29:59.637919Z",
+  "name": "approval_rejected_retry",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/users/1/role",
+    "body": {
+      "role": "evidence_rejected_role_1779262199-bc67e5c0",
+      "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8"
+    }
+  },
+  "http_status": 409,
+  "body": {
+    "ok": false,
+    "operation": "change_user_role",
+    "status": "approval_rejected",
+    "message": "The approval request was rejected.",
+    "data": null,
+    "security": {
+      "decision": "BLOCK",
+      "policy_decision": "REQUIRE_APPROVAL",
+      "business_status": "approval_rejected",
+      "message": "The approval request was rejected.",
+      "reason": "approval_rejected",
+      "reason_code": "approval_rejected",
+      "matched_rule": "approval.retry_validation",
+      "risk_level": "CRITICAL",
+      "explanation": "Approval was rejected and cannot execute.",
+      "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+      "audit_event_id": "d97ca153-4800-4095-b8bc-dbfd2926b7da",
+      "execution_status": "NOT_EXECUTED",
+      "retry_mode": null,
+      "request_id": "a4e3aa1d-ba94-4203-a4da-754e8ee86dfa",
+      "error_code": "approval_rejected"
+    },
+    "axis": {
+      "decision": "BLOCK",
+      "policy_decision": "REQUIRE_APPROVAL",
+      "reason": "approval_rejected",
+      "reason_code": "approval_rejected",
+      "matched_rule": "approval.retry_validation",
+      "message": "Write request blocked by policy",
+      "risk_level": "CRITICAL",
+      "explanation": "Approval was rejected and cannot execute.",
+      "classification": {
+        "operation": "UPDATE",
+        "query_type": "WRITE",
+        "scope": "single",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "users"
+        },
+        "risk_signals": [
+          "critical_table",
+          "prod_write",
+          "scope_has_id",
+          "scope_has_tenant_id"
+        ]
+      },
+      "rows": [],
+      "row_count": 0,
+      "request_id": "a4e3aa1d-ba94-4203-a4da-754e8ee86dfa",
+      "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+      "actor_type": "human",
+      "audit_event_id": "d97ca153-4800-4095-b8bc-dbfd2926b7da",
+      "execution_status": "NOT_EXECUTED",
+      "operating_mode": "enforce",
+      "session_id": "48e8390d-438b-47c9-a256-93bd563ccf37",
+      "error_code": "approval_rejected",
+      "error": {
+        "code": "approval_rejected",
+        "message": "Approval was rejected.",
+        "category": "approval",
+        "severity": "warning",
+        "request_id": "a4e3aa1d-ba94-4203-a4da-754e8ee86dfa",
+        "safe_to_retry": false,
+        "operator_action": "Do not execute the rejected request. Verify final decision in audit evidence.",
+        "details": {
+          "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+          "decision": "BLOCK",
+          "matched_rule": "approval.retry_validation",
+          "operation": "update",
+          "policy_decision": "REQUIRE_APPROVAL",
+          "policy_id": "axis_real_app_pilot",
+          "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+          "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+          "query_type": "write",
+          "reason": "approval_rejected",
+          "request_id": "a4e3aa1d-ba94-4203-a4da-754e8ee86dfa",
+          "risk": "CRITICAL",
+          "scope": "single",
+          "session_id": "48e8390d-438b-47c9-a256-93bd563ccf37",
+          "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177"
+        }
+      }
+    }
+  },
+  "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+  "approval_required_response": {
+    "captured_at": "2026-05-20T07:29:59.581082Z",
+    "name": "approval_required_for_rejection",
+    "request": {
+      "method": "POST",
+      "url": "http://localhost:8000/api/users/1/role",
+      "body": {
+        "role": "evidence_rejected_role_1779262199-bc67e5c0"
+      }
+    },
+    "http_status": 202,
+    "body": {
+      "ok": false,
+      "operation": "change_user_role",
+      "status": "approval_required",
+      "message": "This operation requires security approval before execution.",
+      "data": null,
+      "security": {
+        "decision": "REQUIRE_APPROVAL",
+        "policy_decision": "REQUIRE_APPROVAL",
+        "business_status": "approval_required",
+        "message": "This operation requires security approval before execution.",
+        "reason": "write_requires_approval",
+        "reason_code": "write_requires_approval",
+        "matched_rule": "pilot.approval.users_role_update",
+        "risk_level": "HIGH",
+        "explanation": "Production write requires explicit approval before execution.",
+        "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+        "policy_id": "axis_real_app_pilot",
+        "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+        "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+        "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+        "audit_event_id": "62d20706-7ead-4f5a-a6e5-6b03eeadf343",
+        "execution_status": "NOT_EXECUTED",
+        "retry_mode": "submit_same_request_with_approval_id",
+        "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+        "error_code": null
+      },
+      "axis": {
+        "decision": "REQUIRE_APPROVAL",
+        "policy_decision": "REQUIRE_APPROVAL",
+        "reason": "write_requires_approval",
+        "reason_code": "write_requires_approval",
+        "matched_rule": "pilot.approval.users_role_update",
+        "message": "Write request requires approval",
+        "risk_level": "HIGH",
+        "explanation": "Production write requires explicit approval before execution.",
+        "classification": {
+          "operation": "UPDATE",
+          "query_type": "WRITE",
+          "scope": "single",
+          "env": "prod",
+          "actor_type": "human",
+          "target": {
+            "db": "prod_main",
+            "schema": "public",
+            "table": "users"
+          },
+          "risk_signals": [
+            "critical_table",
+            "prod_write",
+            "scope_has_id",
+            "scope_has_tenant_id"
+          ]
+        },
+        "rows": [],
+        "row_count": 0,
+        "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+        "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+        "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+        "policy_id": "axis_real_app_pilot",
+        "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+        "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+        "actor_type": "human",
+        "audit_event_id": "62d20706-7ead-4f5a-a6e5-6b03eeadf343",
+        "execution_status": "NOT_EXECUTED",
+        "retry_mode": "submit_same_request_with_approval_id",
+        "operating_mode": "enforce",
+        "session_id": "809ae82a-a1c2-4d0a-93b8-29ca7c76c79c",
+        "error_code": null
+      }
+    }
+  },
+  "rejection_resolution": {
+    "captured_at": "2026-05-20T07:29:59.598195Z",
+    "name": "approval_resolution_reject",
+    "request": {
+      "method": "POST",
+      "url": "http://localhost:8000/api/approvals/49bbbea3-49b5-4218-8e22-769aef79c4a8/resolve",
+      "body": {
+        "decision": "reject",
+        "comment": "Evidence capture rejection"
+      }
+    },
+    "http_status": 409,
+    "body": {
+      "ok": false,
+      "operation": "resolve_axis_approval",
+      "status": "approval_rejected",
+      "message": "The approval request was rejected.",
+      "data": {
+        "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8"
+      },
+      "security": {
+        "decision": "BLOCK",
+        "policy_decision": "REQUIRE_APPROVAL",
+        "business_status": "approval_rejected",
+        "message": "The approval request was rejected.",
+        "reason": "approval_rejected",
+        "reason_code": "approval_rejected",
+        "matched_rule": "pilot.approval.users_role_update",
+        "risk_level": "HIGH",
+        "explanation": "Approval was rejected; the original request remains blocked.",
+        "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+        "policy_id": "axis_real_app_pilot",
+        "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+        "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+        "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+        "audit_event_id": "d3068940-fc9b-46f0-aefa-359a4a08b64e",
+        "execution_status": "NOT_EXECUTED",
+        "retry_mode": null,
+        "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+        "error_code": "approval_rejected"
+      },
+      "axis": {
+        "decision": "BLOCK",
+        "policy_decision": "REQUIRE_APPROVAL",
+        "reason": "approval_rejected",
+        "reason_code": "approval_rejected",
+        "matched_rule": "pilot.approval.users_role_update",
+        "message": "Approval rejected; request remains blocked.",
+        "risk_level": "HIGH",
+        "explanation": "Approval was rejected; the original request remains blocked.",
+        "classification": {
+          "operation": "UPDATE",
+          "query_type": "WRITE",
+          "scope": "single",
+          "env": "prod",
+          "actor_type": "human",
+          "target": {
+            "db": "prod_main",
+            "schema": "public",
+            "table": "users"
+          },
+          "risk_signals": [
+            "critical_table",
+            "prod_write",
+            "scope_has_id",
+            "scope_has_tenant_id"
+          ]
+        },
+        "rows": [],
+        "row_count": 0,
+        "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+        "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+        "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+        "policy_id": "axis_real_app_pilot",
+        "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+        "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+        "actor_type": "human",
+        "audit_event_id": "d3068940-fc9b-46f0-aefa-359a4a08b64e",
+        "execution_status": "NOT_EXECUTED",
+        "operating_mode": "enforce",
+        "session_id": "809ae82a-a1c2-4d0a-93b8-29ca7c76c79c",
+        "error_code": "approval_rejected",
+        "error": {
+          "code": "approval_rejected",
+          "message": "Approval was rejected.",
+          "category": "approval",
+          "severity": "warning",
+          "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+          "safe_to_retry": false,
+          "operator_action": "Do not execute the rejected request. Verify final decision in audit evidence.",
+          "details": {
+            "approval_id": "49bbbea3-49b5-4218-8e22-769aef79c4a8",
+            "decision": "BLOCK",
+            "matched_rule": "pilot.approval.users_role_update",
+            "operation": "update",
+            "policy_decision": "REQUIRE_APPROVAL",
+            "policy_id": "axis_real_app_pilot",
+            "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+            "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+            "query_type": "write",
+            "reason": "approval_rejected",
+            "request_id": "c59bbf14-859e-48d6-9e27-44925cbe3024",
+            "risk": "HIGH",
+            "scope": "single",
+            "session_id": "809ae82a-a1c2-4d0a-93b8-29ca7c76c79c",
+            "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177"
+          }
+        }
+      }
+    }
+  }
+}

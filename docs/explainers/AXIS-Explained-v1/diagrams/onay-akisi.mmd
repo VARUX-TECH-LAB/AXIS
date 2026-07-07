@@ -1,0 +1,28 @@
+sequenceDiagram
+  participant C as Caller
+  participant A as AXIS
+  participant P as Policy engine
+  participant S as Approval store
+  participant W as Audit WAL
+  participant D as PostgreSQL
+
+  C->>A: Riskli SQL isteği
+  A->>P: Policy evaluate
+  P-->>A: APPROVAL_REQUIRED
+  A->>W: Approval created evidence
+  A->>S: PENDING approval
+  A-->>C: 202 approval_id
+  C->>A: Approve veya reject
+  A->>W: Approval resolved evidence
+  A->>S: Final state
+  alt Approved
+    C->>A: Aynı request ve approval_id ile retry
+    A->>S: Exact-context reservation
+    A->>W: Execution attempt evidence
+    A->>D: SQL execution
+    A->>W: Execution result evidence
+    A-->>C: Execution response
+  else Rejected
+    A-->>C: Request blocked kalır
+  end
+

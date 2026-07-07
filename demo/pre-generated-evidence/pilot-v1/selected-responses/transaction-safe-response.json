@@ -1,0 +1,88 @@
+{
+  "captured_at": "2026-05-20T07:29:59.737679Z",
+  "name": "transaction_all_safe",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/workflows/all-safe-transaction",
+    "body": {
+      "amount": "4.20"
+    }
+  },
+  "http_status": 200,
+  "body": {
+    "ok": true,
+    "operation": "transaction_all_safe",
+    "status": "allowed",
+    "message": "Operation completed successfully.",
+    "data": {
+      "axis_write_count": 3
+    },
+    "security": {
+      "decision": "ALLOW",
+      "policy_decision": "ALLOW",
+      "business_status": "allowed",
+      "message": "Operation completed successfully.",
+      "reason": "write_allowed",
+      "reason_code": "write_allowed",
+      "matched_rule": "pilot.allow.orm_insert_business_tables",
+      "risk_level": "MEDIUM",
+      "explanation": "Write matched an explicit allow rule.",
+      "sql_fingerprint": "9242553abba4cee740462a8e2446031727d53717a67c1288817b5f90812bad60",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": null,
+      "audit_event_id": "71bb5ba2-df94-48d2-a09e-a7d38d34c310",
+      "execution_status": "executed",
+      "retry_mode": null,
+      "request_id": "5cc81994-fe58-42d1-b12a-9930eff11a65",
+      "error_code": null
+    },
+    "axis": {
+      "decision": "ALLOW",
+      "policy_decision": "ALLOW",
+      "reason": "write_allowed",
+      "reason_code": "write_allowed",
+      "matched_rule": "pilot.allow.orm_insert_business_tables",
+      "message": "Query allowed by DB Guard",
+      "risk_level": "MEDIUM",
+      "explanation": "Write matched an explicit allow rule.",
+      "classification": {
+        "operation": "INSERT",
+        "query_type": "WRITE",
+        "scope": "single",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "admin_actions"
+        },
+        "risk_signals": [
+          "insert_values",
+          "prod_write",
+          "scope_has_actor_or_user_id",
+          "scope_has_tenant_id"
+        ]
+      },
+      "rows": [
+        {
+          "id": "3"
+        }
+      ],
+      "row_count": 1,
+      "request_id": "5cc81994-fe58-42d1-b12a-9930eff11a65",
+      "approval_id": null,
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "9242553abba4cee740462a8e2446031727d53717a67c1288817b5f90812bad60",
+      "actor_type": "human",
+      "audit_event_id": "71bb5ba2-df94-48d2-a09e-a7d38d34c310",
+      "execution_status": "executed",
+      "operating_mode": "enforce",
+      "session_id": "1a6edd77-f9d6-4c23-a4af-648382417f27",
+      "error_code": null
+    }
+  }
+}

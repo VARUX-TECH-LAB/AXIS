@@ -1,0 +1,15 @@
+# Docker compose service status
+Started: 2026-05-20T07:29:59.064568Z
+Finished: 2026-05-20T07:29:59.259009Z
+Command: docker compose -f demo/docker-compose.pilot.yml ps --no-trunc
+Exit code: 0
+
+## STDOUT
+NAME                                   IMAGE                                 COMMAND                                             SERVICE                    CREATED          STATUS                    PORTS
+axis-main-axis-backend-1               axis-dbguard:pilot                    "axis-entrypoint varux-db-guard"                    axis-backend               30 seconds ago   Up 23 seconds (healthy)   0.0.0.0:6654->6543/tcp, [::]:6654->6543/tcp
+axis-main-pilot-postgres-1             postgres:16-alpine                    "docker-entrypoint.sh postgres"                     pilot-postgres             31 seconds ago   Up 29 seconds (healthy)   0.0.0.0:55432->5432/tcp, [::]:55432->5432/tcp
+axis-main-sample-business-backend-1    axis-sample-business-backend:pilot    "uvicorn app.main:app --host 0.0.0.0 --port 8000"   sample-business-backend    30 seconds ago   Up 18 seconds (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+axis-main-sample-business-frontend-1   axis-sample-business-frontend:pilot   "/docker-entrypoint.sh nginx -g 'daemon off;'"      sample-business-frontend   30 seconds ago   Up 12 seconds             0.0.0.0:8088->80/tcp, [::]:8088->80/tcp
+
+## STDERR
+

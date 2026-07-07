@@ -1,0 +1,17 @@
+flowchart TD
+  A[Request alındı] --> B{Request geçerli mi?}
+  B -->|Hayır| R[REJECT / BLOCK]
+  B -->|Evet| C{SQL parse edilebilir mi?}
+  C -->|Hayır| X[Fail-safe BLOCK]
+  C -->|Evet| D[Operation target scope risk çıkar]
+  D --> E[Policy engine]
+  E --> F{Karar}
+  F -->|ALLOW| G[Audit decision commit]
+  G --> H[PostgreSQL execution]
+  H --> I[Result evidence]
+  F -->|BLOCK| J[Block evidence]
+  J --> K[Execution yok]
+  F -->|APPROVAL_REQUIRED| L[Approval kaydı]
+  L --> M[Approval evidence]
+  M --> N[Execution yok]
+

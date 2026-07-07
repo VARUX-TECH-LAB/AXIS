@@ -1,0 +1,81 @@
+# Pilot demo run
+Started: 2026-05-20T07:29:58.636621Z
+Finished: 2026-05-20T07:29:59.063996Z
+Command: C:\Users\V_LC\AppData\Local\Python\pythoncore-3.14-64\python.exe scripts\run_pilot_demo.py
+Exit code: 0
+
+## STDOUT
+
+1. Direct PostgreSQL read
+  HTTP: 200
+  status: allowed
+  message: Operation completed successfully.
+
+2. ORM customer insert routed through AXIS
+  HTTP: 201
+  status: allowed
+  message: Operation completed successfully.
+  decision: ALLOW
+  matched_rule: pilot.allow.orm_insert_business_tables
+  approval_id: None
+  audit_event_id: b81fb4af-f207-4fda-99cd-ca92f9a6197f
+
+3. Scoped ORM customer update routed through AXIS
+  HTTP: 200
+  status: allowed
+  message: Operation completed successfully.
+  decision: ALLOW
+  matched_rule: pilot.allow.scoped_customer_account_update
+  approval_id: None
+  audit_event_id: f0f3621f-cc1f-4b54-974b-1c56b3df0652
+
+4. Destructive delete blocked
+  HTTP: 403
+  status: blocked
+  message: This operation was blocked by AXIS policy.
+  decision: BLOCK
+  matched_rule: pilot.block.delete_without_where
+  approval_id: None
+  audit_event_id: e01e79b2-39ba-4f31-9e9e-ed0fb11c1ccf
+
+5. Risky role update requires approval
+  HTTP: 202
+  status: approval_required
+  message: This operation requires security approval before execution.
+  decision: REQUIRE_APPROVAL
+  matched_rule: pilot.approval.users_role_update
+  approval_id: 36633003-f559-412f-8911-d3968fb0ef0f
+  audit_event_id: 032cf0c1-1829-4e4a-81d2-9b944c50baac
+
+6. Approval recorded
+  HTTP: 200
+  status: allowed
+  message: Operation completed successfully.
+  decision: ALLOW
+  matched_rule: pilot.approval.users_role_update
+  approval_id: 36633003-f559-412f-8911-d3968fb0ef0f
+  audit_event_id: e89c92d2-bf4c-45ff-80d9-007f1ae572aa
+
+7. Exact operation retry after approval
+  HTTP: 200
+  status: allowed
+  message: Operation completed successfully.
+  decision: ALLOW
+  matched_rule: approval.execution_succeeded
+  approval_id: 36633003-f559-412f-8911-d3968fb0ef0f
+  audit_event_id: 3a82e886-3fd9-4d2c-af90-45eec9e2dd91
+
+8. Blocked transaction rolls back local work
+  HTTP: 403
+  status: blocked
+  message: This operation was blocked by AXIS policy.
+  decision: BLOCK
+  matched_rule: pilot.block.delete_without_where
+  approval_id: None
+  audit_event_id: 2f6efa2e-4a96-4214-9a80-15bf506c94b9
+
+Open the sample UI at http://localhost:8088
+Open AXIS Control Plane with the optional profile at http://localhost:3000
+
+## STDERR
+

@@ -1,0 +1,13 @@
+flowchart TD
+  A[Riskli WRITE] --> B[Classify WRITE]
+  B --> C[Risk sinyalleri]
+  C --> D[Policy evaluate]
+  D -->|APPROVAL_REQUIRED| E[Approval evidence]
+  E --> F[PENDING approval]
+  F --> G[Response 202 approval_id]
+  G --> H[Execution yok]
+  I[Approve sonrası retry] --> J[Exact-context proof]
+  J --> K[Execution attempt evidence]
+  K --> L[PostgreSQL execution]
+  L --> M[Result evidence]
+

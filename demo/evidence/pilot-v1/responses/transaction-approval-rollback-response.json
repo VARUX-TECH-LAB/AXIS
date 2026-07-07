@@ -1,0 +1,92 @@
+{
+  "captured_at": "2026-05-20T07:29:59.765395Z",
+  "name": "transaction_approval_rollback",
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8000/api/workflows/transaction-requires-approval",
+    "body": {
+      "marker": "evidence-approval-marker-1779262199-bc67e5c0",
+      "role": "evidence_workflow_role_1779262199-bc67e5c0"
+    }
+  },
+  "http_status": 202,
+  "body": {
+    "ok": false,
+    "operation": "transaction_requires_approval",
+    "status": "approval_required",
+    "message": "This operation requires security approval before execution.",
+    "data": null,
+    "security": {
+      "decision": "REQUIRE_APPROVAL",
+      "policy_decision": "REQUIRE_APPROVAL",
+      "business_status": "approval_required",
+      "message": "This operation requires security approval before execution.",
+      "reason": "write_requires_approval",
+      "reason_code": "write_requires_approval",
+      "matched_rule": "pilot.approval.users_role_update",
+      "risk_level": "HIGH",
+      "explanation": "Production write requires explicit approval before execution.",
+      "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+      "policy_id": "axis_real_app_pilot",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "approval_id": "2b56857d-482f-476d-b3f5-74cb6bb5e317",
+      "audit_event_id": "45e1eb0b-f831-452c-a188-ced83d32a944",
+      "execution_status": "NOT_EXECUTED",
+      "retry_mode": "submit_same_request_with_approval_id",
+      "request_id": "4efe7457-aabb-4689-b671-f934f41dbe65",
+      "error_code": null
+    },
+    "axis": {
+      "decision": "REQUIRE_APPROVAL",
+      "policy_decision": "REQUIRE_APPROVAL",
+      "reason": "write_requires_approval",
+      "reason_code": "write_requires_approval",
+      "matched_rule": "pilot.approval.users_role_update",
+      "message": "Write request requires approval",
+      "risk_level": "HIGH",
+      "explanation": "Production write requires explicit approval before execution.",
+      "classification": {
+        "operation": "UPDATE",
+        "query_type": "WRITE",
+        "scope": "single",
+        "env": "prod",
+        "actor_type": "human",
+        "target": {
+          "db": "prod_main",
+          "schema": "public",
+          "table": "users"
+        },
+        "risk_signals": [
+          "critical_table",
+          "prod_write",
+          "scope_has_id",
+          "scope_has_tenant_id"
+        ]
+      },
+      "rows": [],
+      "row_count": 0,
+      "request_id": "4efe7457-aabb-4689-b671-f934f41dbe65",
+      "approval_id": "2b56857d-482f-476d-b3f5-74cb6bb5e317",
+      "policy_version": "axis_real_app_pilot_v1@2026-05-20.1",
+      "policy_id": "axis_real_app_pilot",
+      "policy_sha256": "db5abc992d30e79f0e365bc6a4c8769625f2ed7690f42685b6c16fd80bde4c24",
+      "sql_fingerprint": "a851ba53cb365aadbe4f23f3c1fd41b17ec620f6a0bccf0ebcab12de1f45f177",
+      "actor_type": "human",
+      "audit_event_id": "45e1eb0b-f831-452c-a188-ced83d32a944",
+      "execution_status": "NOT_EXECUTED",
+      "retry_mode": "submit_same_request_with_approval_id",
+      "operating_mode": "enforce",
+      "session_id": "e3ae137a-bdf5-4c3e-a7ba-14156f21b697",
+      "error_code": null
+    },
+    "marker": "evidence-approval-marker-1779262199-bc67e5c0",
+    "marker_persisted": false
+  },
+  "state_check": {
+    "checked_via": "http://localhost:8000/api/admin-actions",
+    "marker": "evidence-approval-marker-1779262199-bc67e5c0",
+    "marker_found_in_recent_admin_actions": false,
+    "rollback_confirmed": true
+  }
+}

@@ -1,0 +1,11 @@
+flowchart LR
+  A[Request] --> B[Parse ve sınıflandır]
+  B --> C[Policy evaluate]
+  C --> D{Decision}
+  D -->|ALLOW| E[Execute]
+  D -->|BLOCK| F[Block]
+  D -->|APPROVAL_REQUIRED| G[Suspend ve approval bekle]
+  E --> H[Audit evidence]
+  F --> H
+  G --> H
+
