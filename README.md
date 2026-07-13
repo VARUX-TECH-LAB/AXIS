@@ -127,3 +127,8 @@ AXIS is developed under VARUX.
 ## Legal
 
 This public repository is proprietary and demo-only. See [LICENSE](LICENSE), [NOTICE](NOTICE), and [PUBLIC_DEMO_NOTICE.md](PUBLIC_DEMO_NOTICE.md).
+
+
+
+<img width="6664" height="3750" alt="VARUX" src="https://github.com/user-attachments/assets/371a2d5f-ecd5-44b6-b95f-857942ce3113" />
+
